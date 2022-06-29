@@ -2,8 +2,9 @@
 linked linkedlist = new linked();
 linkedlist.Add(56);
 linkedlist.AddOne(70);
-linkedlist.incert(2, 30);
-linkedlist.Show();
-Console.WriteLine("Element index position : {0} ", linkedlist.search(30));
+int a = linkedlist.search(56);
+linkedlist.incert(a + 2, 30);
+int b = linkedlist.search(30);
+linkedlist.incert(b + 2, 40);
 linkedlist.Show();
 linkedlist.removeLast();
