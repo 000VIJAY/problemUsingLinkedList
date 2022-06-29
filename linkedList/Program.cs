@@ -1,6 +1,6 @@
 ﻿using linkedList;
 linked linkedlist = new linked();
-linkedlist.Add(70);
-linkedlist.AddOne(30);
-linkedlist.AddOne(56);
+linkedlist.Add(56);
+linkedlist.append(30);
+linkedlist.append(70);
 linkedlist.Show();

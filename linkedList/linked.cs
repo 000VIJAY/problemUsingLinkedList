@@ -15,18 +15,17 @@ namespace linkedList
             this.head = node;
             Console.WriteLine("starting Node : " + head.data);
         }
-        public void AddOne(int dataOne)
+        public void append(int data)
         {
-            Node nodeOne = new Node(dataOne);
+            Node node = new Node(data);
             Node temp = head;
             while (temp.next != null)
             {
                 temp = temp.next;
             }
-            temp.next = nodeOne;
-        Console.WriteLine("inserted in Linked list: {0}", nodeOne.data);
+            temp.next = node;
+            Console.WriteLine("Appended list : " +temp.next.data );
         }
-        
         public void Show()
         {
             Node temp = this.head;
