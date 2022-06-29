@@ -56,6 +56,13 @@ namespace linkedList
             }
             return head;  
         }
+        public Node removeFirst()
+        {
+            Console.WriteLine("First element : " +head.data);
+            Node node = head;
+            head = node.next;
+            return node;
+        } 
         public void Show()
         {
             Node temp = this.head;
