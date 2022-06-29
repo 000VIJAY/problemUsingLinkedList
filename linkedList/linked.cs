@@ -114,5 +114,34 @@ namespace linkedList
                 }
             }
         }
+        public void delete(int data)
+        {
+            Node temp = head;
+            Node prev = null;
+            if (temp != null && temp.data == data)
+            {
+                head = temp.next;
+                return;
+            }
+            while (temp != null && temp.data != data)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+                return;
+            prev.next = temp.next;
+        }
+        public int size()
+        {
+            Node temp = head;
+            int count = 0;
+           while (temp != null)
+            {
+                temp = temp.next;
+                count++;
+            }
+           return count;
+        }
     }
 }

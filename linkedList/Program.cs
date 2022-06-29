@@ -7,4 +7,7 @@ linkedlist.incert(a + 2, 30);
 int b = linkedlist.search(30);
 linkedlist.incert(b + 2, 40);
 linkedlist.Show();
+linkedlist.delete(40);
+linkedlist.Show();
+Console.WriteLine( "size of the list : {0}", linkedlist.size());
 linkedlist.removeLast();
