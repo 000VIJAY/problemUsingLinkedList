@@ -56,12 +56,30 @@ namespace linkedList
             }
             return head;  
         }
-        public Node removeFirst()
+        public Node removeLast()
         {
-            Console.WriteLine("First element : " +head.data);
-            Node node = head;
-            head = node.next;
-            return node;
+      
+                Node node = head;
+
+                if (head == null)
+                {
+                    Console.WriteLine("List is empty");
+                }
+                else if (head.next == null)
+                {
+                    Console.WriteLine("Last element :{0} ", node.data);
+                    head = null;
+                }
+                else
+                {
+                    while (node.next.next != null)
+                    {
+                    node = node.next;
+                    }
+                    Console.WriteLine("Last element :{0} ", node.next.data);
+                node.next = null;
+                }
+                return node;
         } 
         public void Show()
         {
