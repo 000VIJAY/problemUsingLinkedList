@@ -24,11 +24,11 @@ namespace linkedList
                 temp = temp.next;
             }
             temp.next = node;
-            Console.WriteLine("Added list : " +temp.next.data );
+            Console.WriteLine("Added list : " + temp.next.data);
         }
-        public Node incert(int position , int data)
+        public Node incert(int position, int data)
         {
-                Node newNode = new Node(data);
+            Node newNode = new Node(data);
             Node temp = head;
             if (position < 1)
             {
@@ -39,12 +39,12 @@ namespace linkedList
                 Node node = newNode;
                 node.next = temp;
                 head = node;
-                Console.WriteLine("incert new node : " +node.data);
+                Console.WriteLine("incert new node : " + node.data);
             }
             else
             {
                 int pos = 1;
-                while (pos != position -1 )
+                while (pos != position - 1)
                 {
                     temp = temp.next;
                     pos++;
@@ -52,9 +52,9 @@ namespace linkedList
                 Node node = newNode;
                 node.next = temp.next;
                 temp.next = node;
-                Console.WriteLine("inserted new node : " +node.data);
+                Console.WriteLine("inserted new node : " + node.data);
             }
-            return head;  
+            return head;
         }
         public int search(int value)
         {
@@ -74,29 +74,29 @@ namespace linkedList
         }
         public Node removeLast()
         {
-      
-                Node node = head;
 
-                if (head == null)
+            Node node = head;
+
+            if (head == null)
+            {
+                Console.WriteLine("List is empty");
+            }
+            else if (head.next == null)
+            {
+                Console.WriteLine("Last element :{0} ", node.data);
+                head = null;
+            }
+            else
+            {
+                while (node.next.next != null)
                 {
-                    Console.WriteLine("List is empty");
-                }
-                else if (head.next == null)
-                {
-                    Console.WriteLine("Last element :{0} ", node.data);
-                    head = null;
-                }
-                else
-                {
-                    while (node.next.next != null)
-                    {
                     node = node.next;
-                    }
-                    Console.WriteLine("Last element :{0} ", node.next.data);
-                node.next = null;
                 }
-                return node;
-        } 
+                Console.WriteLine("Last element :{0} ", node.next.data);
+                node.next = null;
+            }
+            return node;
+        }
         public void Show()
         {
             Node temp = this.head;
@@ -136,12 +136,29 @@ namespace linkedList
         {
             Node temp = head;
             int count = 0;
-           while (temp != null)
+            while (temp != null)
             {
                 temp = temp.next;
                 count++;
             }
-           return count;
+            return count;
+        }
+        public void Sort()
+        {
+            Node node; Node nodeOne;
+            int temp;
+            for (node = this.head; node.next != null; node = node.next)
+            {
+                for (nodeOne = node.next; nodeOne != null; nodeOne = nodeOne.next)
+                {
+                    if (node.data > nodeOne.data)
+                    {
+                        temp = node.data;
+                        node.data = nodeOne.data;
+                        nodeOne.data = temp;
+                    }
+                }
+            }
         }
     }
 }
